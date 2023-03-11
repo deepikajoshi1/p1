@@ -10,11 +10,13 @@ User.destroy_all
 @user_count = User.count
 if @user_count.zero?
   puts "Creating users..."
-  4.times do
-    User.create!(
-      email: Faker::Internet.email,
-      password: Faker::Internet.password
-    )
-  end
-  puts "Finished!"
+  user1 = User.create!(
+    email: "bobm@gmail.com",
+    password: "123456",
+  )
+  user2 = User.create!(
+    email: "jon@gmail.com",
+    password: "123456",
+  )
 end
+puts "Finished!"
